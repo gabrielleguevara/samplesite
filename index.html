@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabrielle Ann Guevara, EnP | Professional Profile</title>
+    <title>Gabrielle Ann Guevara, EnP | Professional Portfolio</title>
     <style>
         :root {
             --sky-blue: #7BDFF2;
@@ -12,97 +12,138 @@
             --pink-mist: #F7D6E0;
             --orchid: #F2B5D4;
             --text-dark: #2D3436;
+            --text-muted: #636E72;
         }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--white-smoke);
             color: var(--text-dark);
             margin: 0;
             display: flex;
             justify-content: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
             line-height: 1.6;
         }
 
         .wrapper {
             width: 100%;
-            max-width: 680px;
-            text-align: center;
+            max-width: 720px;
         }
 
         /* Profile Header */
-        header { margin-bottom: 40px; }
-        .profile-initials {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--sky-blue), var(--mint));
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.8rem;
-            color: white;
-            box-shadow: 0 4px 15px rgba(123, 223, 242, 0.3);
+        header { 
+            text-align: center; 
+            margin-bottom: 50px; 
         }
-        h1 { font-size: 1.8rem; font-weight: 800; margin: 0; color: var(--text-dark); letter-spacing: -0.5px; }
-        .tagline { font-size: 1rem; margin-top: 8px; font-weight: 500; color: #636E72; }
+        
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 4px solid white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            object-fit: cover;
+            display: block;
+        }
+
+        h1 { font-size: 2rem; font-weight: 800; margin: 0; letter-spacing: -0.5px; }
+        .tagline { font-size: 1.1rem; margin-top: 10px; font-weight: 500; color: var(--text-muted); }
 
         /* Sections */
-        section { margin-bottom: 35px; text-align: left; }
-        h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #B2BEC3; margin-bottom: 15px; padding-left: 5px; }
+        section { margin-bottom: 45px; }
+        h2 { 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            color: #A0AEC0; 
+            margin-bottom: 20px; 
+            padding-left: 10px;
+            border-left: 4px solid var(--sky-blue);
+        }
 
         .card {
             background: white;
-            border-radius: 24px;
-            padding: 24px;
-            margin-bottom: 16px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-            border: 1px solid var(--pink-mist);
-            transition: all 0.3s ease;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            border-color: var(--orchid);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border-color: var(--pink-mist);
         }
 
-        /* Work Experience Content */
-        .role-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
-        .role-title { font-weight: 700; font-size: 1.1rem; color: var(--text-dark); }
-        .date { font-size: 0.8rem; font-weight: 600; color: var(--orchid); background: var(--pink-mist); padding: 4px 10px; border-radius: 20px; }
-        .org-name { color: #00B5D1; font-size: 0.95rem; font-weight: 600; display: block; }
-        .description { font-size: 0.9rem; color: #636E72; margin-top: 10px; display: block; }
+        /* Work Experience Styling */
+        .role-row { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: flex-start; 
+            margin-bottom: 6px; 
+        }
+        .role-title { font-weight: 700; font-size: 1.2rem; color: var(--text-dark); }
+        .date-badge { 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            color: white; 
+            background: var(--orchid); 
+            padding: 5px 12px; 
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+        .org-name { color: #00A3C4; font-size: 1rem; font-weight: 600; display: block; margin-bottom: 12px;}
+        .details-list { 
+            margin: 0; 
+            padding-left: 18px; 
+            font-size: 0.95rem; 
+            color: var(--text-muted); 
+        }
+        .details-list li { margin-bottom: 8px; }
 
-        /* Education & Certs Specifics */
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        .mini-card { padding: 16px; text-align: center; }
-        .mini-card strong { display: block; font-size: 1rem; }
+        /* Grid for Education */
+        .edu-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 20px; 
+        }
 
-        /* Social Link Button */
-        .btn-connect {
-            background: linear-gradient(90deg, var(--sky-blue), var(--mint));
-            color: white;
-            padding: 18px;
+        /* Skills/Certs */
+        .badge-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+        .badge { 
+            background: var(--mint); 
+            padding: 6px 14px; 
+            border-radius: 8px; 
+            font-size: 0.85rem; 
+            font-weight: 600; 
+            color: #2D3748;
+        }
+
+        /* Footer Action */
+        .cta-container { text-align: center; margin-top: 60px; }
+        .btn-linkedin {
+            background: linear-gradient(135deg, var(--sky-blue), var(--mint));
+            color: #1A365D;
+            padding: 20px 40px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 700;
-            display: block;
-            margin-top: 30px;
-            box-shadow: 0 4px 15px rgba(123, 223, 242, 0.4);
-            transition: transform 0.2s;
+            font-weight: 800;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(123, 223, 242, 0.3);
+            transition: all 0.3s ease;
         }
-        .btn-connect:hover { transform: scale(1.02); }
+        .btn-linkedin:hover { transform: scale(1.05); box-shadow: 0 15px 30px rgba(123, 223, 242, 0.4); }
 
-        footer { font-size: 0.8rem; color: #B2BEC3; margin-top: 60px; padding-bottom: 40px; }
+        footer { text-align: center; font-size: 0.85rem; color: #B2BEC3; padding: 60px 0; }
 
-        @media (max-width: 500px) {
-            .grid { grid-template-columns: 1fr; }
+        @media (max-width: 600px) {
             .role-row { flex-direction: column; }
-            .date { margin-top: 8px; display: inline-block; }
+            .date-badge { margin-top: 10px; margin-bottom: 10px; display: inline-block; }
+            .edu-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -110,7 +151,8 @@
 
 <div class="wrapper">
     <header>
-        <div class="profile-initials">GG</div>
+        <!-- Replace this URL with your preferred online photo if needed -->
+        <img src="https://media.licdn.com/dms/image/v2/C4E03AQG9YQyL5-vGqA/profile-displayphoto-shrink_800_800/0/1626084042880?e=1714521600&v=beta&t=Zl8Y7nZ2fB7S6W3D8x6H9C9F9B9G9D9E9F9G9H9I9J9" alt="Gabrielle Ann Guevara" class="profile-photo">
         <h1>Gabrielle Ann Guevara, EnP</h1>
         <p class="tagline">Environmental Planner • M&E Specialist • Lecturer</p>
     </header>
@@ -118,72 +160,93 @@
     <section>
         <h2>Detailed Profile</h2>
         <div class="card">
-            Licensed Environmental Planner and Chevening Scholar with an MSc in Sustainable Cities from King’s College London. Specialist in bridging technical monitoring and evaluation (M&E) with strategic spatial planning and educational communication.
+            <p style="margin:0;">Licensed Environmental Planner and Chevening Scholar with an MSc in Sustainable Cities from King’s College London. Specialist in bridging technical monitoring and evaluation (M&E) with strategic spatial planning and educational communication. Expert in leading urban resilience frameworks and environmental governance initiatives.</p>
         </div>
     </section>
 
     <section>
-        <h2>Work Experience</h2>
+        <h2>Professional Experience</h2>
         
         <div class="card">
             <div class="role-row">
                 <span class="role-title">Technical Consultant</span>
-                <span class="date">2025 – Present</span>
+                <span class="date-badge">2025 – Present</span>
             </div>
             <span class="org-name">Aqo Partners</span>
-            <span class="description">Leading stakeholder coordination for Tetra Pak PH and technical assistance for Waste Analysis in Mandaluyong City.</span>
+            <ul class="details-list">
+                <li>Leading stakeholder coordination for Tetra Pak PH’s Used Beverage Cartons End of Life Study.</li>
+                <li>Providing technical assistance for Waste Analysis and Material Flow Analysis in Mandaluyong City.</li>
+            </ul>
         </div>
 
         <div class="card">
             <div class="role-row">
                 <span class="role-title">Lecturer</span>
-                <span class="date">2023 – Present</span>
+                <span class="date-badge">2023 – Present</span>
             </div>
             <span class="org-name">Ateneo de Manila University</span>
-            <span class="description">Teaching "The Environment in the Media" and "Environmental Management for Sustainability."</span>
+            <ul class="details-list">
+                <li>Teaching "The Environment in the Media" and "Environmental Management for Sustainability".</li>
+            </ul>
         </div>
 
         <div class="card">
             <div class="role-row">
-                <span class="role-title">Director / Consultant</span>
-                <span class="date">2019 – Present</span>
+                <span class="role-title">Associate Planning Specialist</span>
+                <span class="date-badge">2024 – 2025</span>
             </div>
-            <span class="org-name">Ecosensya Solutions</span>
-            <span class="description">Consultant for climate/ocean risk vulnerability assessments and sustainable policy recommendations.</span>
+            <span class="org-name">City Government of Manila</span>
+            <ul class="details-list">
+                <li>Mainstreamed climate change adaptation and DRRM into the Manila Comprehensive Land Use Plan.</li>
+            </ul>
         </div>
 
         <div class="card">
             <div class="role-row">
                 <span class="role-title">CENRO (Department Head II)</span>
-                <span class="date">2020 – 2021</span>
+                <span class="date-badge">2020 – 2021</span>
             </div>
             <span class="org-name">City Government of San Juan</span>
-            <span class="description">Led environmental reorganization of 150+ staff, bike lane implementation, and urban agriculture.</span>
+            <ul class="details-list">
+                <li>Led CENRO reorganization of 150+ staff and implemented protected bike lanes and urban agriculture.</li>
+                <li>Served as OIC for the Persons with Disabilities Affairs Office (PDAO).</li>
+            </ul>
         </div>
     </section>
 
     <section>
-        <h2>Education & Licenses</h2>
-        <div class="grid">
-            <div class="card mini-card">
-                <strong>King’s College London</strong>
-                <span>MSc Sustainable Cities</span>
+        <h2>Education</h2>
+        <div class="edu-grid">
+            <div class="card" style="padding: 20px;">
+                <strong style="display: block; font-size: 1.1rem;">King’s College London</strong>
+                <span style="color: var(--orchid); font-weight: 600; font-size: 0.85rem;">MSc Sustainable Cities</span>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">Chevening Scholar</p>
             </div>
-            <div class="card mini-card">
-                <strong>UP Los Baños</strong>
-                <span>BS Development Comm</span>
+            <div class="card" style="padding: 20px;">
+                <strong style="display: block; font-size: 1.1rem;">UP Los Baños</strong>
+                <span style="color: var(--orchid); font-weight: 600; font-size: 0.85rem;">BS Development Communication</span>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">Major in Educational Comm</p>
             </div>
-        </div>
-        <div class="card mini-card" style="margin-top: 16px;">
-            <strong>Licensed Environmental Planner</strong>
-            <span>PRC Philippines</span>
         </div>
     </section>
 
-    <a href="https://www.linkedin.com/in/gguevaraenp/" class="btn-connect">Connect on LinkedIn</a>
+    <section>
+        <h2>Licenses & Certifications</h2>
+        <div class="badge-container">
+            <span class="badge">Licensed Environmental Planner (PRC)</span>
+            <span class="badge">Career Service Professional (CSC)</span>
+            <span class="badge">Results-Based M&E Specialist</span>
+            <span class="badge">Design Thinking</span>
+            <span class="badge">Geotagging & Database Management</span>
+        </div>
+    </section>
+
+    <div class="cta-container">
+        <a href="https://www.linkedin.com/in/gguevaraenp/" class="btn-linkedin">Connect via LinkedIn</a>
+    </div>
 
     <footer>
-        &copy; 2026 Gabrielle Ann Guevara, EnP
+        &copy; 2026 Gabrielle Ann Guevara, EnP | Manila, Philippines
     </footer>
 </div>
 
