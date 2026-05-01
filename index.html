@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabrielle Ann Guevara, EnP | Professional Profile</title>
+    <style>
+        :root {
+            --sky-blue: #7BDFF2;
+            --mint: #B2F7EF;
+            --white-smoke: #EFF7F6;
+            --pink-mist: #F7D6E0;
+            --orchid: #F2B5D4;
+            --text-dark: #2D3436;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--white-smoke);
+            color: var(--text-dark);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 680px;
+            text-align: center;
+        }
+
+        /* Profile Header */
+        header { margin-bottom: 40px; }
+        .profile-initials {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--sky-blue), var(--mint));
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: white;
+            box-shadow: 0 4px 15px rgba(123, 223, 242, 0.3);
+        }
+        h1 { font-size: 1.8rem; font-weight: 800; margin: 0; color: var(--text-dark); letter-spacing: -0.5px; }
+        .tagline { font-size: 1rem; margin-top: 8px; font-weight: 500; color: #636E72; }
+
+        /* Sections */
+        section { margin-bottom: 35px; text-align: left; }
+        h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #B2BEC3; margin-bottom: 15px; padding-left: 5px; }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            border: 1px solid var(--pink-mist);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--orchid);
+        }
+
+        /* Work Experience Content */
+        .role-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
+        .role-title { font-weight: 700; font-size: 1.1rem; color: var(--text-dark); }
+        .date { font-size: 0.8rem; font-weight: 600; color: var(--orchid); background: var(--pink-mist); padding: 4px 10px; border-radius: 20px; }
+        .org-name { color: #00B5D1; font-size: 0.95rem; font-weight: 600; display: block; }
+        .description { font-size: 0.9rem; color: #636E72; margin-top: 10px; display: block; }
+
+        /* Education & Certs Specifics */
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .mini-card { padding: 16px; text-align: center; }
+        .mini-card strong { display: block; font-size: 1rem; }
+
+        /* Social Link Button */
+        .btn-connect {
+            background: linear-gradient(90deg, var(--sky-blue), var(--mint));
+            color: white;
+            padding: 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: block;
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(123, 223, 242, 0.4);
+            transition: transform 0.2s;
+        }
+        .btn-connect:hover { transform: scale(1.02); }
+
+        footer { font-size: 0.8rem; color: #B2BEC3; margin-top: 60px; padding-bottom: 40px; }
+
+        @media (max-width: 500px) {
+            .grid { grid-template-columns: 1fr; }
+            .role-row { flex-direction: column; }
+            .date { margin-top: 8px; display: inline-block; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <header>
+        <div class="profile-initials">GG</div>
+        <h1>Gabrielle Ann Guevara, EnP</h1>
+        <p class="tagline">Environmental Planner • M&E Specialist • Lecturer</p>
+    </header>
+
+    <section>
+        <h2>Detailed Profile</h2>
+        <div class="card">
+            Licensed Environmental Planner and Chevening Scholar with an MSc in Sustainable Cities from King’s College London. Specialist in bridging technical monitoring and evaluation (M&E) with strategic spatial planning and educational communication.
+        </div>
+    </section>
+
+    <section>
+        <h2>Work Experience</h2>
+        
+        <div class="card">
+            <div class="role-row">
+                <span class="role-title">Technical Consultant</span>
+                <span class="date">2025 – Present</span>
+            </div>
+            <span class="org-name">Aqo Partners</span>
+            <span class="description">Leading stakeholder coordination for Tetra Pak PH and technical assistance for Waste Analysis in Mandaluyong City.</span>
+        </div>
+
+        <div class="card">
+            <div class="role-row">
+                <span class="role-title">Lecturer</span>
+                <span class="date">2023 – Present</span>
+            </div>
+            <span class="org-name">Ateneo de Manila University</span>
+            <span class="description">Teaching "The Environment in the Media" and "Environmental Management for Sustainability."</span>
+        </div>
+
+        <div class="card">
+            <div class="role-row">
+                <span class="role-title">Director / Consultant</span>
+                <span class="date">2019 – Present</span>
+            </div>
+            <span class="org-name">Ecosensya Solutions</span>
+            <span class="description">Consultant for climate/ocean risk vulnerability assessments and sustainable policy recommendations.</span>
+        </div>
+
+        <div class="card">
+            <div class="role-row">
+                <span class="role-title">CENRO (Department Head II)</span>
+                <span class="date">2020 – 2021</span>
+            </div>
+            <span class="org-name">City Government of San Juan</span>
+            <span class="description">Led environmental reorganization of 150+ staff, bike lane implementation, and urban agriculture.</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>Education & Licenses</h2>
+        <div class="grid">
+            <div class="card mini-card">
+                <strong>King’s College London</strong>
+                <span>MSc Sustainable Cities</span>
+            </div>
+            <div class="card mini-card">
+                <strong>UP Los Baños</strong>
+                <span>BS Development Comm</span>
+            </div>
+        </div>
+        <div class="card mini-card" style="margin-top: 16px;">
+            <strong>Licensed Environmental Planner</strong>
+            <span>PRC Philippines</span>
+        </div>
+    </section>
+
+    <a href="https://www.linkedin.com/in/gguevaraenp/" class="btn-connect">Connect on LinkedIn</a>
+
+    <footer>
+        &copy; 2026 Gabrielle Ann Guevara, EnP
+    </footer>
+</div>
+
+</body>
+</html>
