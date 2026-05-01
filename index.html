@@ -3,243 +3,411 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabrielle Ann Guevara, EnP | Environmental Planner</title>
+    <title>Gabrielle Ann Guevara, EnP</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
         :root {
-            --bg-color: #ffffff;
-            --text-main: #000000;
-            --text-secondary: #666666;
-            --line-color: #e5e5e5;
-            --accent: #999999;
+            --ink: #1A1A1A;
+            --muted: #6B6B6B;
+            --faint: #E8E4DF;
+            --accent: #2C5F4A;
+            --accent-light: #EAF3EE;
+            --bg: #FAFAF8;
+            --white: #FFFFFF;
         }
 
         body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            padding: 0;
-            line-height: 1.5;
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            font-size: 16px;
+            line-height: 1.7;
             -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 80px 40px;
-        }
-
-        /* Nav-style Header */
-        header {
-            border-bottom: 1px solid var(--text-main);
-            padding-bottom: 20px;
-            margin-bottom: 80px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-        }
-
-        .brand h1 {
-            font-size: 1.8rem;
-            font-weight: 500;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .header-meta {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-secondary);
-        }
-
-        /* Hero Section */
+        /* ─── HERO ─── */
         .hero {
-            margin-bottom: 100px;
+            background: var(--white);
+            border-bottom: 1px solid var(--faint);
+            padding: 100px 40px 80px;
+            text-align: center;
         }
 
-        .hero img {
-            width: 100%;
-            height: auto;
-            filter: grayscale(100%);
-            margin-bottom: 40px;
-            transition: filter 0.5s ease;
+        .hero-inner {
+            max-width: 680px;
+            margin: 0 auto;
         }
 
-        .hero img:hover {
-            filter: grayscale(0%);
-        }
-
-        .hero-text {
-            font-size: 2.2rem;
-            line-height: 1.2;
+        .name {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(3rem, 7vw, 5rem);
             font-weight: 400;
-            max-width: 900px;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            color: var(--ink);
         }
 
-        /* Section Layout */
-        section {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 40px;
-            padding: 60px 0;
-            border-top: 1px solid var(--line-color);
+        .name em {
+            font-style: italic;
+            color: var(--accent);
         }
 
-        h2 {
+        .credential {
+            display: inline-block;
+            margin-top: 18px;
             font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 0;
-            font-weight: 600;
-        }
-
-        /* Content Styles */
-        .content-block {
-            margin-bottom: 40px;
-        }
-
-        .entry-title {
-            font-size: 1.25rem;
             font-weight: 500;
-            margin: 0 0 5px 0;
-        }
-
-        .entry-meta {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
+            letter-spacing: 3px;
             text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .hero-divider {
+            width: 40px;
+            height: 1px;
+            background: var(--accent);
+            margin: 28px auto;
+        }
+
+        .tagline {
+            font-size: 1.05rem;
+            font-weight: 300;
+            color: var(--muted);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .hero-cta {
+            margin-top: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
             letter-spacing: 1px;
-            margin-bottom: 15px;
-            display: block;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1.5px solid var(--ink);
+            color: var(--ink);
+            border-radius: 2px;
+            transition: background 0.2s, color 0.2s;
         }
 
-        .entry-desc {
-            font-size: 1rem;
-            color: var(--text-main);
-            max-width: 600px;
+        .btn:hover {
+            background: var(--ink);
+            color: var(--white);
         }
 
-        .skills-grid {
+        /* ─── LAYOUT ─── */
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .page-body {
+            padding: 80px 40px 100px;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        /* ─── SECTION ─── */
+        .section { margin-bottom: 72px; }
+
+        .section-label {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--faint);
+        }
+
+        /* ─── ABOUT ─── */
+        .about-text {
+            font-size: 1.1rem;
+            font-weight: 300;
+            line-height: 1.85;
+            color: var(--ink);
+        }
+
+        /* ─── EXPERIENCE ─── */
+        .exp-item {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 0 40px;
+            padding: 28px 0;
+            border-bottom: 1px solid var(--faint);
+        }
+
+        .exp-item:first-of-type { border-top: 1px solid var(--faint); }
+
+        .exp-meta {
+            padding-top: 3px;
+        }
+
+        .exp-date {
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--muted);
+            letter-spacing: 0.5px;
+        }
+
+        .exp-role {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--ink);
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .exp-org {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 12px;
+            letter-spacing: 0.3px;
+        }
+
+        .exp-details {
+            list-style: none;
+            padding: 0;
+        }
+
+        .exp-details li {
+            font-size: 0.92rem;
+            color: var(--muted);
+            font-weight: 300;
+            padding-left: 16px;
+            position: relative;
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+
+        .exp-details li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--faint);
+        }
+
+        /* ─── EDUCATION ─── */
+        .edu-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 1px;
+            background: var(--faint);
+            border: 1px solid var(--faint);
         }
 
-        /* Footer / Links */
-        .contact-link {
-            font-size: 1.5rem;
-            color: var(--text-main);
-            text-decoration: none;
-            border-bottom: 2px solid var(--text-main);
-            padding-bottom: 5px;
-            transition: color 0.3s;
+        .edu-item {
+            background: var(--white);
+            padding: 28px 30px;
         }
 
-        .contact-link:hover {
+        .edu-school {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: var(--ink);
+            margin-bottom: 6px;
+        }
+
+        .edu-degree {
+            font-size: 0.87rem;
+            font-weight: 400;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+
+        .edu-note {
+            font-size: 0.78rem;
+            font-weight: 500;
             color: var(--accent);
-            border-color: var(--accent);
+            letter-spacing: 0.5px;
         }
 
+        /* ─── SKILLS ─── */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: var(--ink);
+            padding: 8px 18px;
+            border: 1px solid var(--faint);
+            background: var(--white);
+            letter-spacing: 0.3px;
+        }
+
+        /* ─── FOOTER ─── */
         footer {
-            margin-top: 100px;
-            padding-top: 20px;
-            border-top: 1px solid var(--text-main);
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-secondary);
+            background: var(--ink);
+            color: rgba(255,255,255,0.35);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.8rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
         }
 
-        @media (max-width: 768px) {
-            section { grid-template-columns: 1fr; gap: 20px; }
-            .hero-text { font-size: 1.5rem; }
-            header { flex-direction: column; align-items: flex-start; }
-            .header-meta { margin-top: 10px; }
+        footer a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+        }
+
+        footer a:hover { color: white; }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 640px) {
+            .hero { padding: 72px 24px 60px; }
+            .page-body { padding: 60px 24px 80px; }
+            .exp-item { grid-template-columns: 1fr; gap: 8px; }
+            .exp-meta { display: flex; gap: 12px; align-items: baseline; }
+            .edu-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <div class="brand">
-            <h1>Gabrielle Ann Guevara</h1>
-        </div>
-        <div class="header-meta">
-            Environmental Planner • M&E Specialist • EnP
-        </div>
-    </header>
-
-    <div class="hero">
-        <!-- Grayscale professional photo that turns color on hover -->
-        <img src="https://media.licdn.com/dms/image/v2/C4E03AQG9YQyL5-vGqA/profile-displayphoto-shrink_800_800/0/1626084042880?e=1714521600&v=beta&t=Zl8Y7nZ2fB7S6W3D8x6H9C9F9B9G9D9E9F9G9H9I9J9" alt="Gabrielle Ann Guevara">
-        <div class="hero-text">
-            Advancing sustainable urban development through data-driven planning, institutional capacity building, and climate resilience frameworks.
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-inner">
+        <h1 class="name">Gabrielle Ann<br><em>Guevara</em></h1>
+        <span class="credential">EnP &nbsp;·&nbsp; Environmental Planner</span>
+        <div class="hero-divider"></div>
+        <p class="tagline">Bridging sustainable urban planning, environmental governance, and evidence-based M&amp;E across the Philippines and beyond.</p>
+        <div class="hero-cta">
+            <a href="https://www.linkedin.com/in/gguevaraenp/" class="btn">View LinkedIn Profile</a>
         </div>
     </div>
+</header>
 
-    <section id="about">
-        <h2>Profile</h2>
-        <div class="content-block">
-            <p class="entry-desc">Licensed Environmental Planner and Chevening Scholar with an MSc in Sustainable Cities from King’s College London. Specialist in bridging technical monitoring and evaluation (M&E) with strategic spatial planning and educational communication. Expert in leading urban resilience frameworks and environmental governance initiatives.</p>
+<!-- BODY -->
+<main class="page-body">
+
+    <!-- ABOUT -->
+    <section class="section">
+        <h2 class="section-label">Profile</h2>
+        <p class="about-text">Licensed Environmental Planner and Chevening Scholar with an MSc in Sustainable Cities from King's College London. Specialist in monitoring &amp; evaluation, strategic spatial planning, and environmental communication. Experienced in leading urban resilience frameworks, DRRM integration, and cross-sector stakeholder engagement in Philippine local government and academic contexts.</p>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section">
+        <h2 class="section-label">Experience</h2>
+
+        <div class="exp-item">
+            <div class="exp-meta">
+                <span class="exp-date">2025 – Present</span>
+            </div>
+            <div>
+                <p class="exp-role">Technical Consultant</p>
+                <p class="exp-org">Aqo Partners</p>
+                <ul class="exp-details">
+                    <li>Leading stakeholder coordination for Tetra Pak PH's Used Beverage Cartons End of Life Study.</li>
+                    <li>Providing technical assistance for Waste Analysis and Material Flow Analysis in Mandaluyong City.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-meta">
+                <span class="exp-date">2023 – Present</span>
+            </div>
+            <div>
+                <p class="exp-role">Lecturer</p>
+                <p class="exp-org">Ateneo de Manila University</p>
+                <ul class="exp-details">
+                    <li>Teaching "The Environment in the Media" and "Environmental Management for Sustainability."</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-meta">
+                <span class="exp-date">2024 – 2025</span>
+            </div>
+            <div>
+                <p class="exp-role">Associate Planning Specialist</p>
+                <p class="exp-org">City Government of Manila</p>
+                <ul class="exp-details">
+                    <li>Mainstreamed climate change adaptation and DRRM into the Manila Comprehensive Land Use Plan.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-meta">
+                <span class="exp-date">2020 – 2021</span>
+            </div>
+            <div>
+                <p class="exp-role">CENRO — Department Head II</p>
+                <p class="exp-org">City Government of San Juan</p>
+                <ul class="exp-details">
+                    <li>Led CENRO reorganization of 150+ staff; implemented protected bike lanes and urban agriculture programs.</li>
+                    <li>Served as OIC for the Persons with Disabilities Affairs Office (PDAO).</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <section id="experience">
-        <h2>Selected Experience</h2>
-        <div class="entries">
-            <div class="content-block">
-                <span class="entry-meta">2025 — Present / Manila</span>
-                <h3 class="entry-title">Aqo Partners</h3>
-                <p class="entry-desc">Technical Consultant leading stakeholder coordination for used beverage cartons end-of-life studies and material flow analysis.</p>
+    <!-- EDUCATION -->
+    <section class="section">
+        <h2 class="section-label">Education</h2>
+        <div class="edu-grid">
+            <div class="edu-item">
+                <p class="edu-school">King's College London</p>
+                <p class="edu-degree">MSc Sustainable Cities</p>
+                <p class="edu-note">Chevening Scholar</p>
             </div>
-            <div class="content-block">
-                <span class="entry-meta">2023 — Present / Quezon City</span>
-                <h3 class="entry-title">Ateneo de Manila University</h3>
-                <p class="entry-desc">Lecturer for Environmental Science, focusing on Environmental Management for Sustainability and Media intersections.</p>
-            </div>
-            <div class="content-block">
-                <span class="entry-meta">2024 — 2025 / Manila</span>
-                <h3 class="entry-title">City Government of Manila</h3>
-                <p class="entry-desc">Associate Professional Planning Specialist for the Comprehensive Land Use Plan, mainstreaming climate change adaptation.</p>
-            </div>
-            <div class="content-block">
-                <span class="entry-meta">2020 — 2021 / San Juan</span>
-                <h3 class="entry-title">City Government of San Juan</h3>
-                <p class="entry-desc">Department Head (CENRO). Led reorganization of technical staff and implementation of urban agriculture and bike lane networks.</p>
+            <div class="edu-item">
+                <p class="edu-school">UP Los Baños</p>
+                <p class="edu-degree">BS Development Communication</p>
+                <p class="edu-note">Major in Educational Communication</p>
             </div>
         </div>
     </section>
 
-    <section id="education">
-        <h2>Academic Background</h2>
-        <div class="entries">
-            <div class="content-block">
-                <span class="entry-meta">United Kingdom / MSc</span>
-                <h3 class="entry-title">King’s College London</h3>
-                <p class="entry-desc">Sustainable Cities. Chevening Scholar.</p>
-            </div>
-            <div class="content-block">
-                <span class="entry-meta">Philippines / BS</span>
-                <h3 class="entry-title">University of the Philippines - Los Baños</h3>
-                <p class="entry-desc">Development Communication. Major in Educational Communication.</p>
-            </div>
+    <!-- LICENSES & SKILLS -->
+    <section class="section">
+        <h2 class="section-label">Licenses &amp; Expertise</h2>
+        <div class="skills-grid">
+            <span class="skill-tag">Licensed Environmental Planner (PRC)</span>
+            <span class="skill-tag">Career Service Professional (CSC)</span>
+            <span class="skill-tag">Results-Based M&amp;E</span>
+            <span class="skill-tag">Design Thinking</span>
+            <span class="skill-tag">Geotagging &amp; Database Management</span>
+            <span class="skill-tag">Climate Change Adaptation</span>
+            <span class="skill-tag">Urban Resilience Planning</span>
+            <span class="skill-tag">Stakeholder Engagement</span>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Inquiry</h2>
-        <div class="content-block">
-            <a href="https://www.linkedin.com/in/gguevaraenp/" class="contact-link">Connect on LinkedIn</a>
-        </div>
-    </section>
+</main>
 
-    <footer>
-        © 2026 Gabrielle Ann Guevara, EnP. All Rights Reserved.
-    </footer>
-</div>
+<footer>
+    <p>&copy; 2026 &nbsp;Gabrielle Ann Guevara, EnP &nbsp;·&nbsp; Manila, Philippines &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/gguevaraenp/">linkedin.com/in/gguevaraenp</a></p>
+</footer>
 
 </body>
 </html>
